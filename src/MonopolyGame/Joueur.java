@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Joueur {
 	
-	//Attributs
+	//Attributes
 	private String nom;
 	private String code;
 	private static int nbJoueurs;
 	private Pion pion;
+	private int solde = 500;
 	
 	
-	//Constructeur
+	//Constructor
 	public Joueur(String nom, String nomPion) {
 		this.nom = nom;
 		nbJoueurs++;
@@ -31,5 +32,12 @@ public class Joueur {
 		return this.nom;
 	}
 	
+	public int getSolde(){
+		return solde;
+	}
+
+	public void changerSolde(int somme) {
+		this.solde += somme;
+	}
 	
 }

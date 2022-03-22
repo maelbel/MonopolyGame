@@ -12,7 +12,6 @@ public class testMonopoly {
 		jeu.ajouterJoueur(j2);
 		
 		jeu.lancerJeu();
-				
 	}
 
 }

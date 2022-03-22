@@ -4,15 +4,26 @@ public abstract class Case {
 
 	//Attributs
 	private int numeroCase;
-	private int typeCase;
+    private int argent;
 	private static int nbCase = 0;
-	private String refCase;
 	
 	//Constructeur
-	public Case(int typeCase) {
+	public Case() {
 		this.numeroCase = nbCase;
-		this.typeCase = typeCase;
-		this.refCase = "C" + numeroCase;
 		nbCase++;
 	}
+
+	public String toString() {
+		String message = "";
+		
+		message += "Cases n°" + this.numeroCase;
+		
+		return message;
+	}
+
+	protected abstract void recoitArgent(Joueur joueur);
+	protected abstract void retirerArgent(Joueur joueur);
+
+
+    
 }
