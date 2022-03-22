@@ -24,7 +24,7 @@ public class Des {
 	
 	//Method to throw the dice
 	public int lancer() {
-		int nbRandom= r.nextInt(NB_FACE+1);
+		int nbRandom = r.nextInt(NB_FACE + 1 - 1) + 1;
 		
 		return nbRandom;
 	}

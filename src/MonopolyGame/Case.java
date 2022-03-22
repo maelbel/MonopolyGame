@@ -1,6 +1,6 @@
 package MonopolyGame;
 
-public class Case {
+public abstract class Case {
 
 	//Attributs
 	private int numeroCase;
