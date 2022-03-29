@@ -12,16 +12,4 @@ public class CasePrison extends Case {
 		
 		return message;
 	}
-
-	@Override
-	protected void recoitArgent(Joueur joueur) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void retirerArgent(Joueur joueur) {
-		// TODO Auto-generated method stub
-		
-	}
 }

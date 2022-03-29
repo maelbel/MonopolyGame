@@ -1,30 +1,30 @@
 package MonopolyGame;
 
-public class CaseImpot extends Case {
-	int payerArgent = 200;
+public class CaseImpot extends Case implements RetirerArgent {
 	
-    public CaseImpot() {
-	}
+	private int somme;
+	
+    public CaseImpot(int somme) {
+    	this.somme = somme;
+    }
     
     public String toString() {
 		String message = "";
 		
 		message += super.toString() + " (Case Impôt)\n";
 		
-		message += "-M" + payerArgent;
+		message += "-M" + somme;
 		
 		return message;
 	}
+    
+    public int getSomme() {
+    	return this.somme;
+    }
 
 	@Override
-	protected void recoitArgent(Joueur joueur) {
-		joueur.changerSolde(payerArgent);
-	}
-
-	@Override
-	protected void retirerArgent(Joueur joueur) {
-		// TODO Auto-generated method stub
-		
+	public void retirerArgent(Joueur joueur, int somme) {
+		joueur.changerSolde(-somme);		
 	}
     
     

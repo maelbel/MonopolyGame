@@ -1,13 +1,9 @@
 package MonopolyGame;
 
-public class CaseChance extends Case {
-	int recoitSommeArgent = 200;
+public class CaseChance extends Case implements AjouterArgent {
+	int somme = 200;
     
 	public CaseChance() {
-	}
-
-    public  int recoitArgent (){
-        return recoitSommeArgent;
 	}
     
     public String toString() {
@@ -15,18 +11,17 @@ public class CaseChance extends Case {
 		
 		message += super.toString() + " (Case Chance)\n";
 		
-		message += "+M" + recoitSommeArgent;
+		message += "+M" + somme;
 		
 		return message;
 	}
+    
+    public int getSomme() {
+    	return this.somme;
+    }
 
 	@Override
-	protected void recoitArgent(Joueur joueur) {
-		joueur.changerSolde(recoitSommeArgent);
-	}
-
-	@Override
-	protected void retirerArgent(Joueur joueur) {
-	
+	public void ajouterArgent(Joueur joueur, int somme) {
+		joueur.changerSolde(somme);
 	}
 }

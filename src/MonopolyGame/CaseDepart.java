@@ -1,7 +1,7 @@
 package MonopolyGame;
 
-public class CaseDepart extends Case {
-	int recoitSommeArgent = 200;
+public class CaseDepart extends Case implements AjouterArgent {
+	int somme = 200;
 	
 	public CaseDepart() {
 	}
@@ -11,17 +11,17 @@ public class CaseDepart extends Case {
 		
 		message += super.toString() + " (Case Départ)\n";
 		
-		message += "+M" + recoitSommeArgent;
+		message += "+M" + somme;
 		
 		return message;
 	}
+    
+    public int getSomme() {
+    	return this.somme;
+    }
 
 	@Override
-	protected void recoitArgent(Joueur joueur) {
-		joueur.changerSolde(recoitSommeArgent);
-	}
-
-	@Override
-	protected void retirerArgent(Joueur joueur) {
+	public void ajouterArgent(Joueur joueur, int somme) {
+		joueur.changerSolde(somme);
 	}
 }

@@ -1,13 +1,9 @@
 package MonopolyGame;
 
-import java.util.ArrayList;
-
 public class Joueur {
 	
 	//Attributes
 	private String nom;
-	private String code;
-	private static int nbJoueurs;
 	private Pion pion;
 	private int solde = 500;
 	
@@ -15,13 +11,7 @@ public class Joueur {
 	//Constructor
 	public Joueur(String nom, String nomPion) {
 		this.nom = nom;
-		nbJoueurs++;
-		code = "J" + nbJoueurs;
 		pion = new Pion(nomPion, this);
-	}
-	
-	public void ajouterPion(Pion p) {
-		this.pion = p;
 	}
 	
 	public Pion getPion() {
@@ -33,11 +23,19 @@ public class Joueur {
 	}
 	
 	public int getSolde(){
-		return solde;
+		return this.solde;
 	}
 
 	public void changerSolde(int somme) {
-		this.solde += somme;
+		this.solde = solde + somme;
+	}
+	
+	public String toString() {
+		String message = "";
+		
+		message += nom;
+		
+		return nom;
 	}
 	
 }
